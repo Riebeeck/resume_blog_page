@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 10 10 10;
+    --muted: 107 114 128;
+    --accent: 59 130 246;
+    --border: 229 231 235;
+  }
+
+  .dark {
+    --background: 10 10 10;
+    --foreground: 237 237 237;
+    --muted: 156 163 175;
+    --accent: 96 165 250;
+    --border: 31 41 55;
+  }
+
+  * {
+    @apply border-border-light dark:border-border-dark;
+  }
+
+  body {
+    @apply bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark;
+    @apply transition-colors duration-theme;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+/* Typography improvements */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-7 md:leading-8;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .link {
+    @apply text-accent-light dark:text-accent-dark hover:underline;
+  }
+
+  .prose-custom {
+    @apply max-w-content mx-auto;
+  }
+
+  .prose-custom p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose-custom h1,
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
+    @apply font-semibold mt-8 mb-4;
+  }
+
+  .prose-custom h2 {
+    @apply text-3xl;
+  }
+
+  .prose-custom h3 {
+    @apply text-2xl;
+  }
+
+  .prose-custom h4 {
+    @apply text-xl;
+  }
+
+  .prose-custom ul,
+  .prose-custom ol {
+    @apply mb-4 ml-6;
+  }
+
+  .prose-custom li {
+    @apply mb-2;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 border-accent-light dark:border-accent-dark pl-4 italic my-4;
+  }
+
+  .prose-custom code {
+    @apply bg-muted-light/10 dark:bg-muted-dark/10 px-1.5 py-0.5 rounded text-sm;
+  }
+
+  .prose-custom pre {
+    @apply bg-muted-light/10 dark:bg-muted-dark/10 p-4 rounded-lg overflow-x-auto my-4;
+  }
+
+  .prose-custom pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose-custom img {
+    @apply rounded-lg my-6;
+  }
+
+  .prose-custom hr {
+    @apply border-border-light dark:border-border-dark my-8;
+  }
+
+  .prose-custom a {
+    @apply text-accent-light dark:text-accent-dark hover:underline;
+  }
+}
+
+/* Code syntax highlighting - compatible with rehype-highlight */
+@layer utilities {
+  .hljs {
+    @apply bg-transparent;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    @apply text-muted-light dark:text-muted-dark italic;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-subst {
+    @apply text-accent-light dark:text-accent-dark font-semibold;
+  }
+
+  .hljs-number,
+  .hljs-literal,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-tag .hljs-attr {
+    @apply text-emerald-600 dark:text-emerald-400;
+  }
+
+  .hljs-string,
+  .hljs-doctag {
+    @apply text-amber-600 dark:text-amber-400;
+  }
+
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-id {
+    @apply text-blue-600 dark:text-blue-400 font-semibold;
+  }
+}

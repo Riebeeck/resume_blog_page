@@ -1,0 +1,20 @@
+<svg width="200" height="250" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimal "B" Logo - Navy & Pink -->
+  <rect x="0" y="0" width="44" height="44" rx="6" fill="#2d3561"/>
+  <rect x="52" y="0" width="44" height="44" rx="6" fill="#2d3561"/>
+  <rect x="104" y="0" width="44" height="44" rx="6" fill="#2d3561"/>
+  
+  <rect x="0" y="52" width="44" height="44" rx="6" fill="#2d3561"/>
+  <rect x="156" y="52" width="44" height="44" rx="6" fill="#e91e63"/>
+  
+  <rect x="0" y="104" width="44" height="44" rx="6" fill="#2d3561"/>
+  <rect x="52" y="104" width="44" height="44" rx="6" fill="#e91e63"/>
+  <rect x="104" y="104" width="44" height="44" rx="6" fill="#e91e63"/>
+  
+  <rect x="0" y="156" width="44" height="44" rx="6" fill="#2d3561"/>
+  <rect x="156" y="156" width="44" height="44" rx="6" fill="#e91e63"/>
+  
+  <rect x="0" y="208" width="44" height="44" rx="6" fill="#2d3561"/>
+  <rect x="52" y="208" width="44" height="44" rx="6" fill="#e91e63"/>
+  <rect x="104" y="208" width="44" height="44" rx="6" fill="#e91e63"/>
+</svg>

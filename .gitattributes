@@ -1,0 +1,30 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+
+# Images
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Web files
+*.html text
+*.css text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.json text
+*.md text
+
+# Config files
+*.yml text
+*.yaml text
+.gitignore text
+.gitattributes text
+
+# Prevent LF to CRLF conversion on Windows
+*.sh text eol=lf
+Makefile text eol=lf

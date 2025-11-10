@@ -1,0 +1,245 @@
+---
+title: "Building with Next.js"
+date: "2025-01-15"
+excerpt: "A deep dive into building modern web applications with Next.js 14, including best practices and real-world examples."
+tags: ["nextjs", "react", "web development", "tutorial"]
+---
+
+## Introduction
+
+Next.js has revolutionized how we build React applications. With the release of Next.js 14 and the App Router, the framework has become even more powerful and developer-friendly.
+
+In this post, I'll share what I've learned building production applications with Next.js, including code examples and best practices.
+
+## Why Next.js?
+
+Next.js solves several critical problems in modern web development:
+
+- **Server-Side Rendering (SSR)** - Better performance and SEO
+- **Static Site Generation (SSG)** - Blazing fast static pages
+- **File-based Routing** - Intuitive and powerful routing system
+- **API Routes** - Full-stack capabilities in one framework
+- **Image Optimization** - Automatic image optimization out of the box
+
+## The App Router
+
+The new App Router is a game-changer. Here's a simple example of a page component:
+
+```tsx
+// app/blog/[slug]/page.tsx
+import { notFound } from 'next/navigation'
+
+type Props = {
+  params: { slug: string }
+}
+
+export default async function BlogPost({ params }: Props) {
+  const post = await getPost(params.slug)
+
+  if (!post) {
+    notFound()
+  }
+
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <div>{post.content}</div>
+    </article>
+  )
+}
+```
+
+### Server Components by Default
+
+One of the most powerful features is that components are Server Components by default:
+
+```tsx
+// This runs on the server!
+export default async function ServerComponent() {
+  const data = await fetch('https://api.example.com/data')
+  const json = await data.json()
+
+  return <div>{json.message}</div>
+}
+```
+
+## Data Fetching Patterns
+
+Next.js provides several ways to fetch data. Here's my preferred approach for blog posts:
+
+```typescript
+// lib/blog.ts
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+
+export async function getAllPosts() {
+  const postsDirectory = path.join(process.cwd(), 'content/blog')
+  const fileNames = fs.readdirSync(postsDirectory)
+
+  const posts = fileNames.map((fileName) => {
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const { data, content } = matter(fileContents)
+
+    return {
+      slug: fileName.replace(/\.mdx$/, ''),
+      ...data,
+      content,
+    }
+  })
+
+  return posts.sort((a, b) =>
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
+}
+```
+
+## Static Generation
+
+For blog posts, static generation is ideal:
+
+```tsx
+// Generate static paths at build time
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+```
+
+This generates all blog post pages at build time, resulting in instant page loads.
+
+## Image Optimization
+
+The Next.js Image component is incredibly powerful:
+
+```tsx
+import Image from 'next/image'
+
+export default function Hero() {
+  return (
+    <Image
+      src="/hero.jpg"
+      alt="Hero image"
+      width={1200}
+      height={600}
+      priority
+      className="rounded-lg"
+    />
+  )
+}
+```
+
+The `Image` component automatically:
+- Optimizes images for different screen sizes
+- Lazy loads images by default
+- Serves images in modern formats (WebP, AVIF)
+- Prevents layout shift with automatic sizing
+
+## Metadata and SEO
+
+Next.js 14 makes SEO straightforward with the Metadata API:
+
+```tsx
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Building with Next.js',
+  description: 'A guide to building modern web apps',
+  openGraph: {
+    title: 'Building with Next.js',
+    description: 'A guide to building modern web apps',
+    images: ['/og-image.jpg'],
+  },
+}
+```
+
+## Performance Tips
+
+Here are some key performance optimizations I always implement:
+
+### 1. Use Dynamic Imports
+
+For heavy components, use dynamic imports:
+
+```tsx
+import dynamic from 'next/dynamic'
+
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <p>Loading...</p>,
+})
+```
+
+### 2. Optimize Fonts
+
+Use the built-in font optimization:
+
+```tsx
+import { Inter } from 'next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={inter.className}>
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+### 3. Streaming and Suspense
+
+Use Suspense boundaries for better UX:
+
+```tsx
+import { Suspense } from 'react'
+
+export default function Page() {
+  return (
+    <div>
+      <h1>My Page</h1>
+      <Suspense fallback={<LoadingSkeleton />}>
+        <SlowComponent />
+      </Suspense>
+    </div>
+  )
+}
+```
+
+## Deployment
+
+Deploying to Vercel is incredibly simple:
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy!
+
+Vercel automatically detects Next.js projects and configures everything for you.
+
+## Conclusion
+
+Next.js 14 with the App Router is a powerful framework that makes building modern web applications a joy. The combination of:
+
+- Server Components
+- Streaming
+- Built-in optimizations
+- Great developer experience
+
+...makes it my go-to choice for new projects.
+
+If you're building a blog, portfolio, or any content-focused site, I highly recommend giving Next.js a try. The learning curve is worth it!
+
+## Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Server Components](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
+- [Vercel Deployment](https://vercel.com/docs)
+
+Happy coding!
