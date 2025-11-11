@@ -12,36 +12,40 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'production'
+      ? 'https://beckvanniekerk.com'
+      : 'http://localhost:3000'
+  ),
   title: {
-    default: 'Your Name | Personal Website & Blog',
-    template: '%s | Your Name',
+    default: 'Beck van Niekerk | Personal Website & Blog',
+    template: '%s | Beck van Niekerk',
   },
-  description: 'Personal website and blog showcasing thoughts, projects, and writings.',
-  keywords: ['blog', 'personal website', 'portfolio', 'writing'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  description: 'Personal website and blog by Beck van Niekerk. Thoughts on technology, software development, and entrepreneurship.',
+  keywords: ['blog', 'personal website', 'portfolio', 'writing', 'technology', 'software development'],
+  authors: [{ name: 'Beck van Niekerk' }],
+  creator: 'Beck van Niekerk',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://yourdomain.com',
-    siteName: 'Your Name',
-    title: 'Your Name | Personal Website & Blog',
-    description: 'Personal website and blog showcasing thoughts, projects, and writings.',
+    url: 'https://beckvanniekerk.com',
+    siteName: 'Beck van Niekerk',
+    title: 'Beck van Niekerk | Personal Website & Blog',
+    description: 'Personal website and blog by Beck van Niekerk. Thoughts on technology, software development, and entrepreneurship.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/general/riebeeck-profile.jpg',
         width: 1200,
         height: 630,
-        alt: 'Your Name',
+        alt: 'Beck van Niekerk',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your Name | Personal Website & Blog',
-    description: 'Personal website and blog showcasing thoughts, projects, and writings.',
-    images: ['/og-image.jpg'],
-    creator: '@yourusername',
+    title: 'Beck van Niekerk | Personal Website & Blog',
+    description: 'Personal website and blog by Beck van Niekerk. Thoughts on technology, software development, and entrepreneurship.',
+    images: ['/images/general/riebeeck-profile.jpg'],
   },
   robots: {
     index: true,

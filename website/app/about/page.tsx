@@ -106,7 +106,7 @@ export default function AboutPage() {
               </a>
             </li>
             <li>
-              <a href="https://github.com/Riebeeck" target="_blank" rel="noopener noreferrer" className="link">
+              <a href="https://github.com/beck-devx" target="_blank" rel="noopener noreferrer" className="link">
                 GitHub
               </a>
             </li>

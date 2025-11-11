@@ -11,10 +11,16 @@ export default async function HomePage() {
       <section className="w-full px-6 py-16 md:py-24 lg:py-32">
         <div className="max-w-content mx-auto">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Your Name
+            <span className="block text-center">Hi, I&apos;m Beck</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-light dark:text-muted-dark max-w-2xl">
-            Brief tagline about yourself. Something compelling and concise that captures your essence.
+            <span className="block text-center">
+              I&apos;m a software engineer and entrepreneur. I&apos;m the Co-Founder and CTO of Stable Edges.
+              Please feel free to explore my work.
+              <br />
+              <br />
+              I&apos;m always looking for new opportunities to collaborate and build something great.
+            </span>
           </p>
         </div>
       </section>

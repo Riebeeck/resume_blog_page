@@ -2,8 +2,8 @@ import Link from 'next/link'
 import EmailSubscription from './EmailSubscription'
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/Riebeeck' },
-  { name: 'Twitter', href: 'https://twitter.com/yourusername' },
+  { name: 'GitHub', href: 'https://github.com/beck-devx' },
+  { name: 'Twitter', href: 'https://twitter.com/StableEdges' },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/riebeeckvanniekerk/' },
   { name: 'Email', href: 'mailto:beck@stableedges.ai' },
 ]

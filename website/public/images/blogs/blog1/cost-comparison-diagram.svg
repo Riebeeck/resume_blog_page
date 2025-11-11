@@ -1,0 +1,129 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <style>
+      .bg { fill: #F8F9FA; }
+      .traditional { fill: #EF4444; }
+      .zerocost { fill: #10B981; }
+      .card { fill: white; stroke: #2C3E50; stroke-width: 2; }
+      .title { fill: #2C3E50; font-weight: 700; font-size: 32px; }
+      .section-title { font-weight: 700; font-size: 24px; }
+      .item-text { font-size: 16px; fill: #374151; }
+      .cost-huge { font-weight: 800; font-size: 48px; }
+      .cost-label { font-size: 14px; fill: #6B7280; }
+      .vs-text { fill: #6B7280; font-weight: 700; font-size: 28px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" class="bg"/>
+
+  <!-- Title -->
+  <text x="500" y="50" text-anchor="middle" class="title">
+    The Cost of Innovation
+  </text>
+  <text x="500" y="80" text-anchor="middle" fill="#6B7280" font-size="18">
+    Traditional Stack vs. Zero-Cost AI-Native Stack
+  </text>
+
+  <!-- VS Circle -->
+  <circle cx="500" cy="370" r="40" fill="#6B7280"/>
+  <text x="500" y="382" text-anchor="middle" fill="white" font-size="28" font-weight="700">VS</text>
+
+  <!-- Traditional Stack (Left) -->
+  <g id="traditional">
+    <!-- Header -->
+    <rect x="50" y="120" width="380" height="50" rx="10" class="traditional"/>
+    <text x="240" y="153" text-anchor="middle" fill="white" class="section-title">
+      Traditional Stack
+    </text>
+
+    <!-- Card -->
+    <rect x="50" y="180" width="380" height="460" rx="10" class="card"/>
+    
+    <!-- Items -->
+    <text x="70" y="220" class="item-text">💻 Developer Tools</text>
+    <text x="370" y="220" text-anchor="end" class="item-text">$50/mo</text>
+    
+    <text x="70" y="260" class="item-text">🗄️ Database (AWS RDS)</text>
+    <text x="370" y="260" text-anchor="end" class="item-text">$200/mo</text>
+    
+    <text x="70" y="300" class="item-text">☁️ Cloud Compute</text>
+    <text x="370" y="300" text-anchor="end" class="item-text">$300/mo</text>
+    
+    <text x="70" y="340" class="item-text">📊 Analytics Platform</text>
+    <text x="370" y="340" text-anchor="end" class="item-text">$500/mo</text>
+    
+    <text x="70" y="380" class="item-text">🤖 AI API Credits</text>
+    <text x="370" y="380" text-anchor="end" class="item-text">$150/mo</text>
+    
+    <text x="70" y="420" class="item-text">🚀 Deployment & CDN</text>
+    <text x="370" y="420" text-anchor="end" class="item-text">$100/mo</text>
+    
+    <text x="70" y="460" class="item-text">👨‍💼 DevOps/Setup Time</text>
+    <text x="370" y="460" text-anchor="end" class="item-text">$2000</text>
+    
+    <!-- Line -->
+    <line x1="70" y1="480" x2="370" y2="480" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Total -->
+    <text x="70" y="520" class="cost-label">MONTHLY COST:</text>
+    <text x="240" y="570" text-anchor="middle" class="cost-huge" fill="#EF4444">
+      $1,300
+    </text>
+    <text x="240" y="600" text-anchor="middle" class="cost-label">
+      + $2,000 setup
+    </text>
+  </g>
+
+  <!-- Zero-Cost Stack (Right) -->
+  <g id="zerocost">
+    <!-- Header -->
+    <rect x="570" y="120" width="380" height="50" rx="10" class="zerocost"/>
+    <text x="760" y="153" text-anchor="middle" fill="white" class="section-title">
+      Zero-Cost Stack
+    </text>
+
+    <!-- Card -->
+    <rect x="570" y="180" width="380" height="460" rx="10" class="card"/>
+    
+    <!-- Items -->
+    <text x="590" y="220" class="item-text">💻 Cursor + Claude</text>
+    <text x="890" y="220" text-anchor="end" class="item-text" fill="#10B981">FREE</text>
+    
+    <text x="590" y="260" class="item-text">🗄️ Neon PostgreSQL</text>
+    <text x="890" y="260" text-anchor="end" class="item-text" fill="#10B981">FREE</text>
+    
+    <text x="590" y="300" class="item-text">☁️ Vercel Edge</text>
+    <text x="890" y="300" text-anchor="end" class="item-text" fill="#10B981">FREE</text>
+    
+    <text x="590" y="340" class="item-text">📊 Databricks Community</text>
+    <text x="890" y="340" text-anchor="end" class="item-text" fill="#10B981">FREE</text>
+    
+    <text x="590" y="380" class="item-text">🤖 Claude API (test)</text>
+    <text x="890" y="380" text-anchor="end" class="item-text" fill="#10B981">FREE</text>
+    
+    <text x="590" y="420" class="item-text">🚀 Global CDN</text>
+    <text x="890" y="420" text-anchor="end" class="item-text" fill="#10B981">FREE</text>
+    
+    <text x="590" y="460" class="item-text">⚡ Setup Time</text>
+    <text x="890" y="460" text-anchor="end" class="item-text" fill="#10B981">5 mins</text>
+    
+    <!-- Line -->
+    <line x1="590" y1="480" x2="890" y2="480" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Total -->
+    <text x="590" y="520" class="cost-label">MONTHLY COST:</text>
+    <text x="760" y="570" text-anchor="middle" class="cost-huge" fill="#10B981">
+      $0
+    </text>
+    <text x="760" y="600" text-anchor="middle" class="cost-label">
+      until profitable ✨
+    </text>
+  </g>
+
+  <!-- Bottom Stats -->
+  <rect x="50" y="660" width="900" height="30" rx="5" fill="#10B981" opacity="0.2"/>
+  <text x="500" y="680" text-anchor="middle" fill="#047857" font-size="16" font-weight="600">
+    💰 First Year Savings: $15,600+ | 🚀 Time to Market: Hours vs. Weeks | ✅ Same Production Architecture
+  </text>
+</svg>

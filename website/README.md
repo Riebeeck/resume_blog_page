@@ -287,6 +287,7 @@ const roboto = Roboto({
 | `make start` | Start development server (installs deps if needed) |
 | `make stop` | Stop development server |
 | `make refresh` | Restart development server |
+| `make status` | Show running server status (dev/prod, ports, build) |
 | `make dev` | Alias for `make start` |
 | `make build` | Build for production |
 | `make clean` | Remove build artifacts and cache |

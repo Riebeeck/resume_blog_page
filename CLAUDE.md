@@ -171,6 +171,9 @@ make stop
 # Restart development server (useful after changes)
 make refresh
 
+# Check server status (shows dev/prod servers, ports, and build status)
+make status
+
 # Clean install (removes node_modules and reinstalls)
 make clean-install
 ```
@@ -218,6 +221,7 @@ npm run build
 - `make start` - Start the development server (http://localhost:3000)
 - `make stop` - Stop the development server
 - `make refresh` - Restart the development server
+- `make status` - Show running server status (development/production)
 - `make build` - Build for production
 - `make clean` - Remove build artifacts and cache
 - `make clean-install` - Remove node_modules and reinstall dependencies
