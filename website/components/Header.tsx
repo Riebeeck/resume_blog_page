@@ -4,17 +4,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from './ThemeToggle'
+import PortfolioDropdown from './PortfolioDropdown'
 
 const navigation = [
-  { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
+  { name: 'About', href: '/about' },
 ]
 
 export default function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-border-light dark:border-border-dark bg-surface-light/60 dark:bg-surface-dark/60 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Name */}
@@ -25,8 +26,8 @@ export default function Header() {
             <Image
               src="/images/logos/beck-logo-minimal-b-navy-pink.svg"
               alt="Beck Logo"
-              width={40}
-              height={50}
+              width={28}
+              height={35}
               className="transition-transform group-hover:scale-105"
             />
             <span>Beck van Niekerk</span>
@@ -51,6 +52,9 @@ export default function Header() {
                 </Link>
               )
             })}
+
+            {/* Portfolio Dropdown */}
+            <PortfolioDropdown />
 
             {/* Theme Toggle */}
             <ThemeToggle />

@@ -30,6 +30,10 @@ const config: Config = {
           light: '#e5e7eb',
           dark: '#1f2937',
         },
+        surface: {
+          light: '#f5f3f0',
+          dark: '#2a2826',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],

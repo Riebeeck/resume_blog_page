@@ -19,8 +19,8 @@ export default function AboutPage() {
             <Image
               src="/images/general/riebeeck-profile.jpg"
               alt="Riebeeck van Niekerk"
-              width={192}
-              height={192}
+              width={240}
+              height={240}
               className="rounded-full object-cover border-4 border-gray-200 dark:border-gray-700 shadow-lg"
               priority
               style={{ aspectRatio: '1/1' }}
@@ -30,37 +30,55 @@ export default function AboutPage() {
 
         <div className="space-y-6 text-lg">
           <p>
-            Riebeeck van Niekerk is Co-Founder and CTO of Stable Edges, an AI design studio helping brands build their digital native AI-powered products & a innovation hub dedicated to building tools for AI observability, traceablity and monitoring.
+            Beck is the Co-Founder and CTO of Stable Edges, an AI design studio & product company helping brands build 
+            their digital native AI-powered products & an innovation hub currently dedicated to building tools for AI 
+            observability, traceablity and monitoring.
           </p>
 
           <h2 id="background">Background</h2>
           <p>
-            Riebeeck has a background in engineering and a passion for building products that improve the world and help people live better lives. 
-            He has a degree in Mechanical Engineering from the University of Texas at San Antonio. Previously, Riebeeck was an Architect at Databricks
-            where he helped scale and build the world's largest data and AI platform, helping customers build their AI-powered products.
+            Beck has a background in engineering and a passion for building products that improve lives. 
+            Previously, he led data engineering at Meta, served as lead Data Scientist for Deloitte&apos;s board of directors, 
+            and was an architect at Databricks helping them scale to a multi-billion dollar company.
           </p>
           <p>
-            Most recently, Riebeeck launched Stable Edges and is developing a X-platform AgentOps & Observability platform for managing AI agents, tracing their performance and improving their overall quality.
+            Most recently, Beck bootstrapped{' '}
+            <a href="https://stableedges.dev" target="_blank" rel="noopener noreferrer" className="link">
+              StableEdges.dev
+            </a>{' '}
+            and{' '}
+            <a href="https://stableedges.ai" target="_blank" rel="noopener noreferrer" className="link">
+              StableEdges.ai
+            </a>
+            , developing AgentOps & Observability toolkits for managing AI agents.
           </p>
 
           <h2 id="what-i-do">What I Do</h2>
           <p>
-            I'm a builder and here are some of the the things that make me tick!
+            I&apos;m a builder and here are some of the the things that make me tick!
           </p>
           <ul>
             <li>Applied Artificial Intelligence</li>
-            <li>Product Development & Software Engineering</li>
-            <li>Systems Architecture & Infrastructure</li>
+            <li>Product Development & Engineering</li>
+            <li>Systems Architecture & Cloud Infrastructure</li>
           </ul>
 
           <h2 id="interests">Interests & Expression</h2>
           <p>
-            Beyond work, I find balance in exploring excellence in the following activities:
+            Beyond work, I find balance in participating and creating in the following activities:
           </p>
           <ul>
             <li>Real Estate Development & Investing</li>
-            <li>Story Telling & Documentary Filmmaking</li>
-            <li>Endurance Sports & Adventure Racing</li>
+            <li>
+              <a href="https://youtu.be/PNl4wLdWPbw?si=qtBRFW4e2S5eVr9g" target="_blank" rel="noopener noreferrer" className="link">
+                Media Production & Documentary Filmmaking
+              </a>
+            </li>
+            <li>
+              <a href="https://xredrocks.com/" target="_blank" rel="noopener noreferrer" className="link">
+                Endurance Sports & Adventure Racing
+              </a>
+            </li>
             <li>Indie Game Development</li>
           </ul>
 
@@ -72,9 +90,9 @@ export default function AboutPage() {
             Thank you for visiting and I hope you find something of value here.
           </p>
 
-          <h2 id="connect">Let's Connect</h2>
+          <h2 id="connect">Let&apos;s Connect</h2>
           <p>
-            If you'd like to get in touch, feel free to reach out via:
+            If you&apos;d like to get in touch, feel free to reach out via:
           </p>
           <ul>
             <li>

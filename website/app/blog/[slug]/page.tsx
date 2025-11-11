@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getAllPosts, getPostBySlug } from '@/lib/blog'
 import { mdxComponents } from '@/components/MDXComponents'
 import TableOfContents from '@/components/TableOfContents'
+import EmailSubscription from '@/components/EmailSubscription'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeHighlight from 'rehype-highlight'
@@ -116,6 +117,13 @@ export default async function BlogPostPage({ params }: Props) {
                 }}
               />
             </div>
+
+            {/* Email Subscription Callout */}
+            <EmailSubscription 
+              variant="inline"
+              title="Enjoyed this post? Subscribe for more insights."
+              subtitle="Get notified when I publish new posts"
+            />
           </article>
 
           {/* Sidebar with Table of Contents */}

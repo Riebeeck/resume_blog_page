@@ -5,6 +5,9 @@ import readingTime from 'reading-time'
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
+// Check if we're in development mode to show draft posts
+const isDevelopment = process.env.NODE_ENV === 'development'
+
 export type BlogPost = {
   slug: string
   title: string
@@ -13,10 +16,11 @@ export type BlogPost = {
   content: string
   readingTime: string
   tags?: string[]
+  published: boolean
 }
 
 /**
- * Get all blog posts
+ * Get all blog posts (only published ones in production, all in development)
  */
 export async function getAllPosts(): Promise<BlogPost[]> {
   // Check if directory exists
@@ -40,12 +44,15 @@ export async function getAllPosts(): Promise<BlogPost[]> {
         slug,
         title: data.title || 'Untitled',
         date: data.date || new Date().toISOString(),
-        excerpt: data.excerpt || '',
+        excerpt: data.excerpt || data.summary || '', // Support both excerpt and summary
         content,
         readingTime: readTime.text,
         tags: data.tags || [],
+        published: data.published ?? true, // Default to true if not specified
       } as BlogPost
     })
+    // Filter out unpublished posts in production
+    .filter((post) => isDevelopment || post.published)
 
   // Sort posts by date (newest first)
   return allPosts.sort((a, b) => {
@@ -54,7 +61,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
 }
 
 /**
- * Get a single post by slug
+ * Get a single post by slug (only if published in production)
  */
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
@@ -68,15 +75,23 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     const { data, content } = matter(fileContents)
     const readTime = readingTime(content)
 
-    return {
+    const post = {
       slug,
       title: data.title || 'Untitled',
       date: data.date || new Date().toISOString(),
-      excerpt: data.excerpt || '',
+      excerpt: data.excerpt || data.summary || '', // Support both excerpt and summary
       content,
       readingTime: readTime.text,
       tags: data.tags || [],
+      published: data.published ?? true, // Default to true if not specified
     }
+
+    // Return null if post is not published (unless in development)
+    if (!post.published && !isDevelopment) {
+      return null
+    }
+
+    return post
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error)
     return null
