@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-// Test webhook auto-deployment
 const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
