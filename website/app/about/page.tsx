@@ -31,31 +31,23 @@ export default function AboutPage() {
         <div className="space-y-6 text-lg">
           <p>
             Beck is the Co-Founder and CTO of Stable Edges, an AI design studio & product company helping brands build 
-            their digital native AI-powered products & an innovation hub currently dedicated to building tools for AI 
-            observability, traceablity and monitoring.
+            their digital native AI-powered products & an innovation hub currently dedicated to building tools for agent 
+            observability, traceablity and quality monitoring.
           </p>
 
           <h2 id="background">Background</h2>
           <p>
             Beck has a background in engineering and a passion for building products that improve lives. 
-            Previously, he led data engineering at Meta, served as lead Data Scientist for Deloitte&apos;s board of directors, 
-            and was an architect at Databricks helping them scale to a multi-billion dollar company.
+            Previously, he led a team of data engineers, served as lead data scientist for Deloitte&apos;s board of directors, 
+            and was an architect at Databricks their Field Engineering team work with customers and scale to a multi-billion dollar SaaS business.
           </p>
           <p>
-            Most recently, Beck bootstrapped{' '}
-            <a href="https://stableedges.dev" target="_blank" rel="noopener noreferrer" className="link">
-              StableEdges.dev
-            </a>{' '}
-            and{' '}
-            <a href="https://stableedges.ai" target="_blank" rel="noopener noreferrer" className="link">
-              StableEdges.ai
-            </a>
-            , developing AgentOps & Observability toolkits for managing AI agents.
+            Most recently, Beck bootstrapped{' '}Stable Edges, a company dedicated to building tools for agent observability, traceablity and quality monitoring.
           </p>
 
           <h2 id="what-i-do">What I Do</h2>
           <p>
-            I&apos;m a builder and here are some of the the things that make me tick!
+            I&apos;m a builder and here are some of skills I bring to the table:
           </p>
           <ul>
             <li>Applied Artificial Intelligence</li>
@@ -65,7 +57,7 @@ export default function AboutPage() {
 
           <h2 id="interests">Interests & Expression</h2>
           <p>
-            Beyond work, I find balance in participating and creating in the following activities:
+            Beyond work, I find balance and expression in the following activities:
           </p>
           <ul>
             <li>Real Estate Development & Investing</li>
@@ -79,7 +71,6 @@ export default function AboutPage() {
                 Endurance Sports & Adventure Racing
               </a>
             </li>
-            <li>Indie Game Development</li>
           </ul>
 
           <h2 id="this-site">About This Site</h2>
