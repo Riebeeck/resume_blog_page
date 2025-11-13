@@ -39,7 +39,7 @@ export default function AboutPage() {
           <p>
             Beck has a background in engineering and a passion for building products that improve lives. 
             Previously, he led a team of data engineers, served as lead data scientist for Deloitte&apos;s board of directors, 
-            and was an architect at Databricks their Field Engineering team work with customers and scale to a multi-billion dollar SaaS business.
+            and was an architect at Databricks within their Field Engineering team, working with customers and scale to a multi-billion dollar SaaS business.
           </p>
           <p>
             Most recently, Beck bootstrapped{' '}Stable Edges, a company dedicated to building tools for agent observability, traceablity and quality monitoring.
